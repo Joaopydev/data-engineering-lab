@@ -1,0 +1,33 @@
+[project]
+name = "docker-model"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "jonvibes", email = "158493175+Joaopydev@users.noreply.github.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "click>=8.0.0",
+    "pandas>=3.1.1",
+    "psycopg[binary,pool]>=3.3.8",
+    "pyarrow>=26.0.1",
+    "sqlalchemy>=2.1.8",
+    "tqdm>=4.70.1",
+]
+
+[project.scripts]
+docker-model = "docker_model:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "jupyter>=1.1.1",
+    "pgcli>=4.7.1",
+]
